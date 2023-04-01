@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { usePhotoStore, PhotosState } from "./storePhotos";
+import { usePhotoStore, IPhotosState } from "./storePhotos";
 
 export default function Photos() {
-  const [photos, loading, error] = usePhotoStore((state: PhotosState) => [
+  const [photos, loading, error] = usePhotoStore((state: IPhotosState) => [
     state.photos,
     state.loading,
     state.error,
@@ -14,13 +14,13 @@ export default function Photos() {
   }, []);
 
   return (
-    <main>
+    <div>
       <h2>Photos</h2>
       {loading && <div>loading...</div>}
       {error && <div>error: {error}</div>}
       {photos.map((photo) => (
         <img key={photo.id} src={photo.thumbnailUrl} alt={photo.title} />
       ))}
-    </main>
+    </div>
   );
 }

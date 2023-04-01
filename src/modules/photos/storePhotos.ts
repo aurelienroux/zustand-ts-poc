@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'
 
-type Photos = {
+type IPhotos = {
   albumId: number,
   id: number,
   title: string,
@@ -9,14 +9,14 @@ type Photos = {
   thumbnailUrl: string
 }
 
-export type PhotosState = {
+export type IPhotosState = {
   loading: boolean,
   error: any,
-  photos: Photos[]
+  photos: IPhotos[]
   fetchPhotos: () => void
 }
 
-export const usePhotoStore = create<PhotosState, [["zustand/devtools", PhotosState]]>(
+export const usePhotoStore = create<IPhotosState, [["zustand/devtools", IPhotosState]]>(
   devtools(
     set => ({
       loading: false,

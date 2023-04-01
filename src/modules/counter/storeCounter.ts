@@ -1,14 +1,14 @@
 import { create } from "zustand";
 import { devtools } from 'zustand/middleware'
 
-export interface CounterState {
+export interface ICounterState {
   count: number,
   title: string,
   incrementCounter: () => void,
   decrementCounter: () => void
 }
 
-export const useCounterStoreDevtools = create<CounterState, [["zustand/devtools", CounterState]]>(
+export const useCounterStoreDevtools = create<ICounterState, [["zustand/devtools", ICounterState]]>(
   devtools(
     set => ({
       count: 13,

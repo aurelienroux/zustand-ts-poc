@@ -1,19 +1,19 @@
 import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'
 
-export interface Program { 
+export interface IProgram { 
   userId: number,
   id: number,
   title: string,
   completed: boolean
 }
 
-export interface ProgramsState {
-  programs: Program[],
+export interface IProgramsState {
+  programs: IProgram[],
   fetchPrograms: () => void
 }
 
-export const useProgramsStore = create<ProgramsState, [['zustand/devtools', ProgramsState]]>(
+export const useProgramsStore = create<IProgramsState, [['zustand/devtools', IProgramsState]]>(
   devtools(
     set => ({
       programs: [],
