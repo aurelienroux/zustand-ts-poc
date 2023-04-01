@@ -6,6 +6,7 @@
 - API from [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
 - YT zustand [tutorial](https://www.youtube.com/watch?v=jLcF0Az1nx8)
 - YT zustand TS [tutorial](https://www.youtube.com/watch?v=dOJkaYE249I)
+- devtools TS [implementation](https://github.com/pmndrs/zustand/discussions/976)
 
 ## Install
 
