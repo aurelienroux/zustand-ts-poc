@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.program {
+  flex-basis: 40%;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgb(30, 30, 30);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+
+.content {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
