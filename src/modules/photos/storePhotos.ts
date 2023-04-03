@@ -24,16 +24,16 @@ export const usePhotoStore = create<IPhotosState, [["zustand/devtools", IPhotosS
       photos: [],
       fetchPhotos: async () => {
         try {
-          set({ loading: true })
+          set({ loading: true }, false, 'loading true')
           const response = await fetch('https://jsonplaceholder.typicode.com/albums/1/photos')
           // buggy API Call to test error
           // const response = await fetch('https://jsonplaceholder.typicode.com/nothing')
 
-          set({ photos: await response.json(), loading: false })
+          set({ photos: await response.json(), loading: false }, false, 'set photos')
         } catch (error: any) {
-          set({ loading: false, error: error.message })
+          set({ loading: false, error: error.message }, false, 'set error')
         }
       }
-    })
+    }), { name: 'photosStore' }
   )
 );

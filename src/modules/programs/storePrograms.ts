@@ -20,8 +20,8 @@ export const useProgramsStore = create<IProgramsState, [['zustand/devtools', IPr
       fetchPrograms: async () => {
         const response = await fetch('https://jsonplaceholder.typicode.com/users/1/todos')
 
-        set({ programs: await response.json() })
+        set({ programs: await response.json() }, false, 'set programs')
       }
-    })
+    }), { name: 'programsStore' }
   )
 );
